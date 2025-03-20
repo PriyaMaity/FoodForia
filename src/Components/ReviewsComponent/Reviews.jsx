@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { getFirestore, collection, getDocs, addDoc } from "firebase/firestore";
 import { app } from "../../Config/firebase";
-
 import ReviewsList from "../ReviewList/ReviewList";
 import "./Reviews.css";
 import { reviewsData } from "../Data/Reviews";
 import FAQs from "../FAQsComponent/FAQs";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const customerImages = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqfyojxMBijikrAeZvgsCyIDMD-rCktUBPw&s",
@@ -145,7 +146,7 @@ export default function Reviews() {
         <h3 className="carousel-title">Images From Our Customers</h3>
         <div className="images-carousel">
           <button className="carousel-btn left" onClick={scrollLeft}>
-            <i className="fa-solid fa-arrow-left"></i>
+            <FontAwesomeIcon icon={faArrowLeft} />
           </button>
           <div className="images-scroll" ref={imagesRef}>
             {customerImages.map((img, idx) => (
@@ -155,15 +156,17 @@ export default function Reviews() {
             ))}
           </div>
           <button className="carousel-btn right" onClick={scrollRight}>
-            <i className="fa-solid fa-arrow-right"></i>
+            <FontAwesomeIcon icon={faArrowRight} />
           </button>
         </div>
       </div>
 
       {/* New Review Form */}
       <div className="review-form">
-        <div className="review-form-group review-input-group">
-          <label htmlFor="reviewComment">Write Review</label>
+        <div className="review-form-left">
+          <label htmlFor="reviewComment" className="review-form-label">
+            Write Review
+          </label>
           <textarea
             id="reviewComment"
             rows="3"
@@ -171,31 +174,38 @@ export default function Reviews() {
             onChange={(e) => setNewComment(e.target.value)}
           />
         </div>
-        <div className="review-form-group rating-group">
-          <label>Select Rating:</label>
-          <select
-            value={newRating}
-            onChange={(e) => setNewRating(e.target.value)}
-          >
-            <option value="0">-- Rating --</option>
-            <option value="1">1 - Poor</option>
-            <option value="2">2 - Fair</option>
-            <option value="3">3 - Good</option>
-            <option value="4">4 - Very Good</option>
-            <option value="5">5 - Excellent</option>
-          </select>
+        <div className="review-form-right">
+          <div className="rating-group">
+            <label for="reviewRating" class="review-form-label">
+              Select Rating:
+            </label>
+            <select
+              id="reviewRating"
+              value={newRating}
+              onChange={(e) => setNewRating(e.target.value)}
+            >
+              <option value="0">-- Rating --</option>
+              <option value="1">1 - Poor</option>
+              <option value="2">2 - Fair</option>
+              <option value="3">3 - Good</option>
+              <option value="4">4 - Very Good</option>
+              <option value="5">5 - Excellent</option>
+            </select>
+          </div>
+          {/* Average Rating */}
+          <div className="star-average">
+            <span className="star-display">
+              {"★".repeat(Math.round(averageRating))}
+              {"☆".repeat(5 - Math.round(averageRating))}
+            </span>
+            <span className="average-rating-text">
+              {averageRating} / 5 <strong>Average</strong>
+            </span>
+          </div>
+          <button className="review-add-btn" onClick={handleAddReview}>
+            Add
+          </button>
         </div>
-        {/* Average Rating */}
-        <div className="average-rating-section">
-          <span className="star-display">
-            {"★".repeat(Math.round(averageRating))}
-            {"☆".repeat(5 - Math.round(averageRating))}
-          </span>
-          <span className="average-rating-text">
-            {averageRating} / 5 <strong>Average</strong>
-          </span>
-        </div>
-        <button onClick={handleAddReview}>Add</button>
       </div>
 
       {/* Sorting Dropdown */}

@@ -48,14 +48,13 @@
 }
 
 .cart-item {
-  margin: 0;
+  margin: 15px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   width: 25%;
   display: flex;
   flex-direction: column;
   text-align: center;
-  margin: 15px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
   background-color: rgba(0, 0, 0, 0.2);
@@ -77,7 +76,6 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 0.5rem 1rem;
-
   border: 1px solid #e0e0e0;
   background-color: #121314;
 }
@@ -181,4 +179,72 @@
 
 .cart-actions button:nth-of-type(2) {
   background-color: #bc4749;
+}
+@media (max-width: 1024px) {
+  .cart-page {
+    width: 80%;
+    padding: 1rem;
+  }
+  .cart-item {
+    width: 30%; /* 3 cards per row */
+    margin: 10px;
+  }
+  .cart-page h2 {
+    font-size: 2.2rem;
+  }
+  .cart-total {
+    font-size: 1.1rem;
+  }
+}
+
+/* For screens up to 768px: 2 cards per row */
+@media (max-width: 768px) {
+  .cart-page {
+    width: 90%;
+    padding: 1rem;
+  }
+  .cart-item {
+    width: 45%; /* 2 cards per row */
+    margin: 10px auto;
+  }
+  .cart-page h2 {
+    font-size: 2rem;
+  }
+  .cart-item img {
+    height: 220px;
+  }
+  .cart-item-info h3 {
+    font-size: 1rem;
+  }
+  .cart-item-info p {
+    font-size: 0.9rem;
+  }
+}
+
+/* For screens up to 480px: 1 card per row */
+@media (max-width: 480px) {
+  .cart-page {
+    width: 95%;
+    padding: 0.5rem;
+  }
+  .cart-item {
+    width: 90%; /* Full width for a single card */
+    margin: 10px auto;
+  }
+  .cart-page h2 {
+    font-size: 1.8rem;
+  }
+  .cart-item img {
+    height: 200px;
+  }
+  .cart-item-info h3 {
+    font-size: 0.9rem;
+  }
+  .cart-item-info p {
+    font-size: 0.8rem;
+  }
+  .cart-actions button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
 }

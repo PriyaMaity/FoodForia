@@ -117,3 +117,63 @@
   height: 2px;
   width: 100%;
 }
+@media (max-width: 1024px) {
+  .food-options input {
+    width: 50%;
+  }
+
+  .menu-scroll {
+    max-width: 80vw;
+  }
+
+  .menu-card {
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Stack container elements vertically */
+  .menu-container {
+    padding: 15px;
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .food-options input {
+    width: 80%;
+  }
+
+  .menus {
+    gap: 15px;
+  }
+
+  .menu-scroll {
+    max-width: 100%;
+    gap: 15px;
+    padding: 10px 0;
+  }
+
+  .menu-card {
+    min-width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for very small screens */
+  .food-options h3 {
+    font-size: 1.5rem;
+  }
+
+  .food-options input {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+
+  .menus button {
+    font-size: 1.8rem;
+  }
+
+  .menu-card {
+    min-width: 100px;
+  }
+}

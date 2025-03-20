@@ -1,10 +1,14 @@
 .foodList-container {
-  margin: 20px;
+  margin: 20px auto;
+  max-width: 1400px;
 }
 
 .foodList-container h2 {
   margin-bottom: 15px;
   color: #333;
+  text-align: center;
+  font-size: 1.8rem;
+  font-family: "Quintessential", serif;
 }
 
 /* The grid for displaying the cards */
@@ -13,6 +17,7 @@
   flex-wrap: wrap;
   gap: 20px;
   background-color: #121314;
+  padding: 10px;
 }
 
 .view-full-menu {
@@ -33,4 +38,50 @@
 
 .view-full-menu button:hover {
   background-color: #85282a;
+}
+@media (max-width: 1024px) {
+  .foodList-container {
+    margin: 10px auto;
+    max-width: 100%;
+  }
+
+  .foods {
+    gap: 15px;
+    padding: 8px;
+  }
+
+  .view-full-menu button {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .foodList-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .foods {
+    gap: 10px;
+    padding: 5px;
+  }
+
+  .view-full-menu button {
+    width: 40%;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices (max-width: 480px) */
+@media (max-width: 480px) {
+  .foodList-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .view-full-menu button {
+    width: 40%;
+    padding: 8px;
+    font-size: 0.8rem;
+  }
 }

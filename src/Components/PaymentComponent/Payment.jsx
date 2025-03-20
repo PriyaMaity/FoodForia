@@ -20,8 +20,12 @@ export default function Payment() {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-
-  const discount = coupon === "DISCOUNT10" ? 0.1 * totalPrice : 0;
+  const discount =
+    totalPrice >= 2000
+      ? totalPrice * 0.2
+      : totalPrice >= 1000
+      ? totalPrice * 0.1
+      : 0;
   const netAmount = totalPrice - discount;
 
   const areAllRequiredFieldsFilled = () => {
@@ -90,9 +94,12 @@ export default function Payment() {
         </div>
 
         <div className="payment-summary-section">
-          <p>Amount: ₹{totalPrice}</p>
-          <p>Discount: {discount ? `10% OFF` : "0% OFF"}</p>
-          <p>Net Amount: ₹{netAmount}</p>
+          <p>Amount: ₹{totalPrice.toFixed(2)}</p>
+          <p>
+            Discount:{" "}
+            {discount > 0 ? `${(discount / totalPrice) * 100}% OFF` : "0% OFF"}
+          </p>
+          <p>Net Amount: ₹{netAmount.toFixed(2)}</p>
           <div className="coupon-section">
             <input
               type="text"

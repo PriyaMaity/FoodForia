@@ -131,3 +131,73 @@
 .payment-actions button:last-of-type {
   background-color: #bc4749;
 }
+@media (max-width: 1024px) {
+  .payment-container {
+    width: 90%;
+    flex-direction: column;
+  }
+  .payment-summary,
+  .payment-details {
+    flex: none;
+    width: 100%;
+  }
+  .payment-summary {
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  .payment-details {
+    padding: 1.5rem;
+  }
+  .payment-details h2 {
+    font-size: 2rem;
+  }
+  .user-inputs input {
+    flex: 1 1 100%;
+  }
+}
+
+/* For screens up to 768px (tablets) */
+@media (max-width: 768px) {
+  .payment-container {
+    width: 95%;
+  }
+  .payment-details {
+    padding: 1rem;
+  }
+  .payment-details h2 {
+    font-size: 1.8rem;
+  }
+  .user-inputs {
+    flex-direction: column;
+  }
+}
+
+/* For screens up to 480px (mobile phones) */
+@media (max-width: 480px) {
+  .payment-container {
+    width: 100%;
+    margin: 1rem auto;
+    padding: 0.5rem;
+    flex-direction: column;
+  }
+  .payment-details {
+    padding: 0.8rem;
+  }
+  .payment-details h2 {
+    font-size: 1.6rem;
+  }
+  .user-inputs input {
+    font-size: 0.9rem;
+  }
+  .coupon-section input,
+  .coupon-section button {
+    font-size: 0.9rem;
+  }
+  .payment-summary-section p {
+    font-size: 1rem;
+  }
+  .payment-actions button {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./FoodCard.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -7,11 +7,19 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../../redux/cartSlice";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faPlus,
+  faMinus,
+  faTruckFast,
+  faClockFour,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function FoodCard({ item }) {
   // const [itemCount, setItemCount] = useState(0);
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.items);
+  const navigate = useNavigate();
 
   // Find this item in the Redux cart (if it exists)
   const cartItem = cartItems.find((i) => i.id === item.id);
@@ -28,25 +36,29 @@ export default function FoodCard({ item }) {
   const handleDecrement = () => {
     dispatch(decrementQuantity(item.id));
   };
+
+  const handleGetRecipe = () => {
+    navigate(`/recipe/${encodeURIComponent(item.name)}`);
+  };
   return (
     <div className="foodCard-container">
       <div className="foodCart-img">
         <img src={item.image} alt={item.name} />
         {quantity === 0 ? (
-          <i className="fa-solid fa-plus" id="add" onClick={handleAdd}></i>
+          <FontAwesomeIcon icon={faPlus} id="add" onClick={handleAdd} />
         ) : (
           <div className="add-remove-btns">
-            <i
-              className="fa-solid fa-minus"
+            <FontAwesomeIcon
+              icon={faMinus}
               id="minus"
               onClick={handleDecrement}
-            ></i>
+            />
             <p>{quantity}</p>
-            <i
-              className="fa-solid fa-plus"
+            <FontAwesomeIcon
+              icon={faPlus}
               id="plus"
               onClick={handleIncrement}
-            ></i>
+            />
           </div>
         )}
       </div>
@@ -57,8 +69,10 @@ export default function FoodCard({ item }) {
           {item.serving}
         </p>
         <p>
-          <i className="fa-solid fa-truck-fast"></i> &nbsp;
-          {item.deliveryCharge} • <i className="fa-regular fa-clock"></i>&nbsp;
+          <FontAwesomeIcon icon={faTruckFast} /> &nbsp;
+          {item.deliveryCharge} • &nbsp;
+          <FontAwesomeIcon icon={faClockFour} />
+          &nbsp;
           {item.deliveryTime}
         </p>
       </div>
@@ -69,6 +83,8 @@ export default function FoodCard({ item }) {
             Go To Cart
           </Link>
         </button>
+
+        <button onClick={handleGetRecipe}>Get Recipe</button>
       </div>
     </div>
   );

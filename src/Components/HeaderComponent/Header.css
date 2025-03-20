@@ -33,6 +33,10 @@
   animation: fadeInUp 1s ease-out 0.5s forwards;
   color: #bc4749;
 }
+.nav {
+  display: flex;
+  align-items: center;
+}
 
 .nav-links {
   list-style: none;
@@ -41,6 +45,7 @@
   margin: 0;
   padding: 0;
 }
+
 .active-link {
   text-decoration: underline;
   font-weight: bold;
@@ -65,6 +70,26 @@
 .nav-links a:hover {
   color: #bc4749;
   text-decoration: none;
+}
+/* Hamburger icon (hidden on larger screens) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #6a994e;
+  transition: background-color 0.3s;
+}
+
+.hamburger:hover .bar {
+  background-color: #bc4749;
 }
 .btns {
   display: flex;
@@ -98,6 +123,55 @@
 
 .btn.signup:hover {
   background-color: #85282a;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    display: none;
+  }
+  .nav.nav-open .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    position: absolute;
+    top: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px;
+
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+  }
+
+  .logo-food {
+    font-size: 1.5rem;
+  }
+  .logo-foria {
+    font-size: 2rem;
+  }
 }
 
 @keyframes fadeInUp {

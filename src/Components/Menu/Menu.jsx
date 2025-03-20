@@ -1,7 +1,8 @@
 import React, { useRef } from "react";
 import { menus } from "../Data/MenuCarousel";
 import "./Menu.css";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 // Duplicate the items so that the carousel can wrap seamlessly.
 const duplicateMenus = [...menus, ...menus];
 
@@ -44,7 +45,7 @@ export default function Menu({
       </div>
       <div className="menus">
         <button onClick={scrollLeft}>
-          <i className="fa-solid fa-arrow-left"></i>
+          <FontAwesomeIcon icon={faArrowLeft} />
         </button>
 
         <div className="menu-scroll" ref={menuRef}>
@@ -67,7 +68,7 @@ export default function Menu({
         </div>
 
         <button onClick={scrollRight}>
-          <i className="fa-solid fa-arrow-right"></i>
+          <FontAwesomeIcon icon={faArrowRight} />
         </button>
       </div>
       <hr />

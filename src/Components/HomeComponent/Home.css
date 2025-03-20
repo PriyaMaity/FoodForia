@@ -42,7 +42,7 @@
 }
 .menu-btn {
   padding: 12px 15px;
-  width: 40%;
+  width: 45%;
   font-size: 1rem;
   background-color: #bc4749;
   border: none;
@@ -82,5 +82,47 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .home-img {
+    width: 100%;
+    height: 500px;
+  }
+  .home-content {
+    position: absolute;
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .home-content h1 {
+    font-size: 2.2rem;
+  }
+  .home-content h1 span {
+    font-size: 1.8rem;
+  }
+  .home-content p {
+    font-size: 1rem;
+    color: #f1f1f1;
+  }
+
+  .menu-btn {
+    width: 40%;
+    padding: 10px;
+    font-size: 0.9rem;
   }
 }

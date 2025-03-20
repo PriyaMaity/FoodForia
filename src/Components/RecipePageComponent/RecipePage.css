@@ -1,0 +1,113 @@
+/* RecipePage.css */
+
+/* Outer container styling */
+.recipe-page-container {
+  padding: 2rem;
+  background-color: #333;
+  color: #fff;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Title styling */
+.recipe-page-container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #f1faee;
+}
+
+/* Loading state */
+.recipe-loading {
+  text-align: center;
+  margin: 2rem auto;
+}
+.recipe-loading img {
+  width: 200px;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+/* Error message */
+.recipe-error {
+  text-align: center;
+  color: #ff6b6b;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+/* Recipe content container */
+.recipe-content {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #222;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Recipe title inside content */
+.recipe-content h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Recipe description */
+.recipe-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Section headings */
+.recipe-content h4 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #6a994e;
+  padding-bottom: 0.3rem;
+}
+
+/* Ingredients list */
+.recipe-content ul {
+  list-style: disc inside;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+.recipe-content ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Instructions styling (if using a special class) */
+.recipe-content p.instructions {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recipe-page-container {
+    padding: 1rem;
+  }
+  .recipe-page-container h2 {
+    font-size: 2rem;
+  }
+  .recipe-content {
+    padding: 1.5rem;
+  }
+  .recipe-content h3 {
+    font-size: 1.8rem;
+  }
+  .recipe-content h4 {
+    font-size: 1.3rem;
+  }
+  .recipe-content p,
+  .recipe-content ul li {
+    font-size: 1rem;
+  }
+  .recipe-loading img {
+    width: 150px;
+  }
+}

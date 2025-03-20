@@ -6,6 +6,7 @@ import Home from "./Components/HomeComponent/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Reviews from "./Components/ReviewsComponent/Reviews";
 import Payment from "./Components/PaymentComponent/Payment";
+import RecipePage from "./Components/RecipePageComponent/RecipePage";
 
 function App() {
   return (
@@ -41,6 +42,14 @@ function App() {
           element={
             <>
               <Payment />
+            </>
+          }
+        />
+        <Route
+          path="/recipe/:dishName"
+          element={
+            <>
+              <RecipePage />
             </>
           }
         />
