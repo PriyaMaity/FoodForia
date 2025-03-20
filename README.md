@@ -1,5 +1,6 @@
 # FoodForia 🍽️
 FoodForia is a **food ordering** web application that brings delicious cuisine right to your door. From signing up with Google to leaving reviews on your favorite dishes, FoodForia is the ultimate platform for all foodies!
+
 LIVE DEMO : https://food-foria-git-main-priyamaitys-projects.vercel.app/
 
 ## Features
