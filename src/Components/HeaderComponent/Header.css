@@ -50,7 +50,7 @@
   text-decoration: underline;
   font-weight: bold;
   color: #bc4749;
-  border-bottom: 2px solid #6a994e;
+  border-bottom: 2px solid #bc4749;
 }
 .nav-links li {
   font-size: 1.3rem;
@@ -182,5 +182,65 @@
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.initials-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #6a994e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.btn.signout {
+  background-color: #bc4749;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.signout:hover {
+  background-color: #85282a;
+}
+
+@media (max-width: 768px) {
+  .profile-section {
+    gap: 5px;
+  }
+  .initials-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .btn {
+    padding: 5px 12px;
+    font-size: 0.8rem;
+  }
+  .profile-section {
+    gap: 8px;
+  }
+  .btn.signout {
+    padding: 4px 8px;
+  }
+  .initials-avatar {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9rem;
   }
 }

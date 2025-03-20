@@ -7,6 +7,7 @@ import { reviewsData } from "../Data/Reviews";
 import FAQs from "../FAQsComponent/FAQs";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const customerImages = [
   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxqfyojxMBijikrAeZvgsCyIDMD-rCktUBPw&s",
@@ -19,6 +20,9 @@ const customerImages = [
 
 export default function Reviews() {
   const db = getFirestore(app);
+  const auth = getAuth(app);
+
+  const [authUser, setAuthUser] = useState(null);
 
   // Start with local reviews (dummy data)
   const [reviews, setReviews] = useState(reviewsData);
@@ -27,6 +31,13 @@ export default function Reviews() {
   const [newComment, setNewComment] = useState("");
   const [sortOption, setSortOption] = useState("top");
   const imagesRef = useRef(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setAuthUser(currentUser);
+    });
+    return () => unsubscribe();
+  }, [auth]);
 
   // Fetch reviews from Firestore on mount
   useEffect(() => {
@@ -64,9 +75,12 @@ export default function Reviews() {
       alert("Please provide both a rating and a comment.");
       return;
     }
+
+    const username = authUser?.displayName || authUser?.email || "Guest";
+
     try {
       const reviewData = {
-        username: "Guest", // Or real user if you have auth
+        username,
         date: new Date().toISOString().split("T")[0],
         rating: Number(newRating),
         comment: newComment,
@@ -115,7 +129,7 @@ export default function Reviews() {
     }
   };
 
-  // Sort reviews
+  // reviews
   const sortedReviews = useMemo(() => {
     let sorted = [...reviews];
     switch (sortOption) {
@@ -130,7 +144,6 @@ export default function Reviews() {
         break;
       case "top":
       default:
-        // top reviews => rating descending
         sorted.sort((a, b) => b.rating - a.rating);
         break;
     }
@@ -176,7 +189,7 @@ export default function Reviews() {
         </div>
         <div className="review-form-right">
           <div className="rating-group">
-            <label for="reviewRating" class="review-form-label">
+            <label htmlFor="reviewRating" className="review-form-label">
               Select Rating:
             </label>
             <select

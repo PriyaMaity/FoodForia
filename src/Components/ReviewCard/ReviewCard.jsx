@@ -21,7 +21,6 @@ const ReviewCard = ({ review }) => {
     avatarUrl ||
     avatarMap[username.toLowerCase()] ||
     "https://picsum.photos/100/100";
-  console.log("Username:", username);
 
   const renderStars = (stars) => {
     const filledStars = "★".repeat(stars);

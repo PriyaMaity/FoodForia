@@ -124,15 +124,15 @@
 }
 @media (max-width: 1024px) {
   .foodCard-container {
-    width: 33.33%;
-    margin: 10px;
+    width: 30%;
+    margin: 0 auto;
   }
 }
 
 @media (max-width: 768px) {
   .foodCard-container {
     width: 45%;
-    margin: 10px auto;
+    margin: 0 auto;
   }
 }
 

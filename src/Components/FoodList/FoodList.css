@@ -73,7 +73,6 @@
   }
 }
 
-/* Extra small devices (max-width: 480px) */
 @media (max-width: 480px) {
   .foodList-container h2 {
     font-size: 1.5rem;

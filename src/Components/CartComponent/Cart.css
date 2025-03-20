@@ -17,8 +17,9 @@
   margin: 2rem auto;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  width: 500px;
-  height: 50vh;
+  width: 100%;
+  max-width: 500px;
+  min-height: 300px;
   padding: 1rem;
   color: #8f8f8f;
   background-color: rgba(0, 0, 0, 0.9);
@@ -221,14 +222,18 @@
   }
 }
 
-/* For screens up to 480px: 1 card per row */
 @media (max-width: 480px) {
+  .cart-empty {
+    width: 90%;
+    min-height: 250px;
+    margin: 1rem auto;
+  }
   .cart-page {
     width: 95%;
     padding: 0.5rem;
   }
   .cart-item {
-    width: 90%; /* Full width for a single card */
+    width: 90%;
     margin: 10px auto;
   }
   .cart-page h2 {
