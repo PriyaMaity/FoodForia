@@ -1,12 +1,22 @@
-# React + Vite
+# FoodForia 🍽️
+FoodForia is a **food ordering** web application that brings delicious cuisine right to your door. From signing up with Google to leaving reviews on your favorite dishes, FoodForia is the ultimate platform for all foodies!
+LIVE DEMO : https://food-foria-git-main-priyamaitys-projects.vercel.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
 
-Currently, two official plugins are available:
+✔ **User Authentication** — Sign up with Email/Password or Google  
+✔ **Dynamic Food Menu** — Browse categories, add items to the cart  
+✔ **Cart & Payment** — Manage your cart and checkout seamlessly  
+✔ **Reviews & Ratings** — Post and read dish reviews  
+✔ **Responsive Design** — Works on desktop, tablet, and mobile  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React + Vite** — Modern and fast frontend framework  
+- **Firebase** — Authentication & real-time database (Firestore)  
+- **Redux** — Manages global state (cart, user data)  
+- **CSS & Media Queries** — Fully responsive UI  
+
+---
