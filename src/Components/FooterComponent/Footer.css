@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Berkshire+Swash&family=Bree+Serif&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jaini&family=Pacifico&family=Quintessential&family=Satisfy&display=swap");
+
+.footer-container {
+  background-color: #121314;
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.about {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about > div {
+  flex: 1;
+  min-width: 250px;
+}
+
+.about h2 {
+  font-family: "Barriecito", sans-serif;
+  font-size: 1.8rem;
+  color: #bc4749;
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.about ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about li {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #6a994e;
+  margin: 6px 0;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.about li:hover {
+  color: #bc4749;
+}
+
+.follow-us p {
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #386641;
+}
+
+.follow-us form {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.follow-us input[type="text"] {
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex: 1;
+}
+
+.follow-us button {
+  padding: 8px 16px;
+  background-color: #bc4749;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.follow-us button:hover {
+  background-color: #85282a;
+}
+
+.copyrights {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  font-size: 1rem;
+  color: #6a994e;
+  border-top: 1px solid #414040;
+  padding-top: 20px;
+}
+
+.follow-us i {
+  font-size: 1.5rem;
+  color: #6a994e;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.follow-us i:hover {
+  color: #bc4749;
+}
+
+.copyrights i {
+  font-size: 1rem;
+  color: #6a994e;
+  margin: 0 5px;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Berkshire+Swash&family=Bree+Serif&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jaini&family=Pacifico&family=Quintessential&family=Satisfy&display=swap");
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo h3,
+.logo h1 {
+  margin: 0;
+  opacity: 0;
+}
+
+.logo-food {
+  font-family: "Barriecito", system-ui;
+  font-size: 1.8rem;
+  font-weight: 500;
+  animation: fadeInUp 1s ease-out forwards;
+  color: #a7c957;
+}
+
+.logo-foria {
+  font-size: 2.4rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  animation: fadeInUp 1s ease-out 0.5s forwards;
+  color: #bc4749;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+.active-link {
+  text-decoration: underline;
+  font-weight: bold;
+  color: #bc4749;
+  border-bottom: 2px solid #6a994e;
+}
+.nav-links li {
+  font-size: 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  color: #6a994e;
+  transition: color 0.3s ease;
+}
+
+.nav-links li:hover {
+  color: #bc4749;
+}
+.nav-links a {
+  color: #6a994e;
+  text-decoration: none;
+}
+.nav-links a:hover {
+  color: #bc4749;
+  text-decoration: none;
+}
+.btns {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn.login {
+  background-color: transparent;
+  border: 1px solid #386641;
+  color: #386641;
+}
+
+.btn.login:hover {
+  background-color: #6a994e;
+  color: #fff;
+}
+
+.btn.signup {
+  background-color: #bc4749;
+  color: #fff;
+}
+
+.btn.signup:hover {
+  background-color: #85282a;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,36 @@
+.foodList-container {
+  margin: 20px;
+}
+
+.foodList-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* The grid for displaying the cards */
+.foods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #121314;
+}
+
+.view-full-menu {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.view-full-menu button {
+  background-color: #bc4749;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.view-full-menu button:hover {
+  background-color: #85282a;
+}

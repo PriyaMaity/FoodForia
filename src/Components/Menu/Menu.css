@@ -1,0 +1,119 @@
+.menu-container {
+  margin: 20px auto;
+  max-width: 1400px;
+  padding: 20px;
+  background: #fdfdfd;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+}
+
+.food-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+.food-options h3 {
+  font-size: 1.8rem;
+  font-family: "Quintessential", serif;
+  margin: 0;
+  color: #222;
+}
+
+.food-options input {
+  flex: 1;
+  width: 40%;
+  padding: 10px 15px;
+  background-color: #121314;
+  font-size: 1rem;
+  border: 2px solid #8bc34a;
+  color: white;
+  border-radius: 30px;
+  transition: border-color 0.3s ease;
+}
+
+.food-options input:focus {
+  outline: none;
+  border-color: #a4d76c;
+}
+
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.menus button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #c4141c;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.menus button:hover {
+  transform: scale(1.2);
+  color: #e74c3c;
+}
+
+.menu-scroll {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  max-width: 70vw;
+  padding: 10px 0;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.menu-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-card {
+  flex: 0 0 auto;
+  text-align: center;
+  min-width: 170px;
+  transition: transform 0.3s ease;
+}
+.menu-card .active {
+  border: 4px solid #e74c3c;
+  padding: 2px;
+}
+.menu-card:hover {
+  transform: translateY(-10px);
+}
+
+.menu-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 20%;
+  object-fit: cover;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.menu-card img:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.menu-card p {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #333;
+}
+.menu-container hr {
+  margin: 10px 0px;
+  background-color: #121314;
+  height: 2px;
+  width: 100%;
+}

@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Barriecito&family=Berkshire+Swash&family=Bree+Serif&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Jaini&family=Pacifico&family=Quintessential&family=Satisfy&display=swap");
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* gap: 30px; */
+  background-color: #121314;
+  color: white;
+}
+.home-content {
+  width: 55%;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 50px;
+  margin: 0 10px;
+  animation: fadeIn 3s;
+  /* border: 1px solid #cccccc;
+  border-radius: 10px; */
+}
+.home-content h1 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.home-content h1 span {
+  font-family: "Quintessential", serif;
+  font-size: 2rem;
+  color: #8bc34a;
+}
+.home-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  max-width: 80%;
+  color: #cccccc;
+}
+.menu-btn {
+  padding: 12px 15px;
+  width: 40%;
+  font-size: 1rem;
+  background-color: #bc4749;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.btn-check-menu:hover {
+  background-color: #6da12f;
+}
+
+.home-img {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+.slide {
+  position: absolute;
+  margin-left: 70px;
+  top: 0;
+  left: 100%;
+  width: 80%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: left 1s ease;
+}
+
+.slide.active {
+  left: 0;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
